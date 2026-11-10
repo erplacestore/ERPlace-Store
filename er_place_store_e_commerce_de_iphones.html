@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Place Store | Feed de iPhones 2026 - 2018</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FCD34D',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        },
+                        darkBg: '#050505',
+                        cardBg: '#111111',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #f3f4f6;
+        }
+
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-section-header {
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+
+        /* App Launcher Square Card Hover Effects */
+        .app-square-card {
+            aspect-ratio: 1 / 1.15;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 2rem;
+            background: linear-gradient(145deg, #141414 0%, #0a0a0a 100%);
+        }
+        
+        .app-square-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(245, 158, 11, 0.5);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.9), 0 0 20px 2px rgba(245, 158, 11, 0.15);
+        }
+
+        /* Hide horizontal scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- BARRA SUPERIOR DE AVISOS -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-black font-extrabold text-[11px] uppercase tracking-widest text-center py-2 px-4 shadow-md flex items-center justify-center gap-3">
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-truck-fast"></i> Envio com Seguro para todo o Brasil</span>
+        <span class="hidden sm:inline">•</span>
+        <span class="hidden sm:inline flex items-center gap-1.5"><i class="fa-solid fa-shield-halved"></i> Garantia ER Place Store</span>
+    </div>
+
+    <!-- CABEÇALHO FIXO -->
+    <header class="sticky top-0 z-40 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            
+            <!-- LOGO DA ER PLACE STORE -->
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div class="relative w-12 h-12 bg-black rounded-2xl border border-neutral-700 flex flex-col items-center justify-center shadow-2xl group-hover:border-amber-500 transition-all overflow-hidden p-1">
+                    <div class="w-6 h-2 border-2 border-white border-b-0 rounded-t-full mb-[1px]"></div>
+                    <div class="w-full h-full bg-black border-2 border-white rounded-lg p-0.5 flex flex-col items-center justify-between">
+                        <div class="text-[10px] font-black text-white tracking-tighter leading-none mt-0.5 flex gap-[1px]">
+                            <span>&lt;&lt;</span>
+                        </div>
+                        <div class="flex items-end justify-center gap-[1.5px] w-full h-2.5 px-1 mb-0.5">
+                            <div class="w-[2px] h-2 bg-white rounded-full"></div>
+                            <div class="w-[2px] h-3 bg-white rounded-full"></div>
+                            <div class="w-[2px] h-1.5 bg-white rounded-full"></div>
+                            <div class="w-[2px] h-2.5 bg-white rounded-full"></div>
+                            <div class="w-[2px] h-3 bg-white rounded-full"></div>
+                            <div class="w-[2px] h-2 bg-white rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <span class="font-black text-xl tracking-tight text-white flex items-center gap-1.5">
+                        ER PLACE <span class="text-[10px] bg-gradient-to-r from-amber-400 to-amber-600 text-black px-1.5 py-0.5 rounded font-black tracking-widest uppercase">STORE</span>
+                    </span>
+                    <span class="text-[10px] text-neutral-400 tracking-wider">Tabelas por Ano (2026 - 2018)</span>
+                </div>
+            </a>
+
+            <!-- BUSCA EM TEMPO REAL -->
+            <div class="hidden md:flex flex-1 max-w-md mx-4 relative">
+                <input type="text" id="searchInput" oninput="filterFeed()" placeholder="Buscar iPhone (ex: Duo, 18 Pro Max, XS Max, 17E...)" 
+                    class="w-full bg-neutral-900 text-sm text-neutral-200 placeholder-neutral-500 rounded-full py-2.5 pl-10 pr-4 border border-neutral-800 focus:outline-none focus:border-amber-500 transition-all">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-neutral-500 text-xs"></i>
+            </div>
+
+            <!-- CARRINHO E WHATSAPP -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/5500000000000" target="_blank" class="hidden sm:flex items-center gap-2 text-xs font-bold bg-emerald-600/20 text-emerald-400 border border-emerald-500/40 px-4 py-2.5 rounded-full hover:bg-emerald-600 hover:text-white transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Atendimento</span>
+                </a>
+
+                <button onclick="toggleCart()" class="relative p-3 text-neutral-300 hover:text-amber-400 bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 rounded-full transition-all">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-amber-500 text-black font-extrabold text-[11px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-black">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- BARRA DE NAVEGAÇÃO DE ANOS (Pills Estilo Launcher) -->
+        <div class="bg-neutral-950/90 border-t border-b border-neutral-800/60 py-2.5 px-4">
+            <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar text-xs">
+                <span class="text-[11px] font-bold text-amber-500 uppercase tracking-wider mr-1 shrink-0 flex items-center gap-1">
+                    <i class="fa-solid fa-calendar-days"></i> ANOS:
+                </span>
+                <a href="#ano-2026" class="px-4 py-1.5 rounded-full bg-amber-500 text-black font-black hover:opacity-90 transition-all shrink-0">🚀 2026</a>
+                <a href="#ano-2025" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">⚡ 2025</a>
+                <a href="#ano-2024" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">💎 2024</a>
+                <a href="#ano-2023" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2023</a>
+                <a href="#ano-2022" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2022</a>
+                <a href="#ano-2021" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2021</a>
+                <a href="#ano-2020" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2020</a>
+                <a href="#ano-2019" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2019</a>
+                <a href="#ano-2018" class="px-4 py-1.5 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-neutral-300 font-bold shrink-0">2018 (XS/XR)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL DO FEED EM TABELAS/ANOS -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16" id="feedContainer">
+        <!-- As tabelas de cada ano são geradas dinamicamente via JS abaixo -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-neutral-800 pt-12 pb-8 text-neutral-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <span class="font-extrabold text-base text-white">ER PLACE STORE</span>
+            </div>
+            <p class="text-neutral-500 max-w-md mx-auto">Tabelas completas de iPhones organizadas por ano de lançamento, do iPhone XR ao iPhone 18 Pro Max de 2026.</p>
+            <p class="text-neutral-600">&copy; 2026 ER Place Store. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DO CARRINHO -->
+    <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden hidden" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="toggleCart()"></div>
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+            <div class="pointer-events-auto w-screen max-w-md bg-neutral-900 text-neutral-100 border-l border-neutral-800 flex flex-col shadow-2xl">
+                <div class="p-6 border-b border-neutral-800 flex items-center justify-between">
+                    <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-amber-400"></i>
+                        <span>Meu Carrinho ER Place</span>
+                    </h2>
+                    <button onclick="toggleCart()" class="text-neutral-400 hover:text-white p-1">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cartItemsContainer"></div>
+
+                <div class="p-6 border-t border-neutral-800 bg-neutral-950 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs text-neutral-400">Total do Pedido:</span>
+                        <span class="font-extrabold text-amber-400 text-lg" id="cartTotal">R$ 0,00</span>
+                    </div>
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-4 rounded-xl flex items-center justify-center gap-2 transition-all text-sm uppercase tracking-wider shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Finalizar Pedido no WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT: ESTRUTURA DOS ANOS E QUADRADOS -->
+    <script>
+        // DADOS ORGANIZADOS POR ANO EXATOS COMO SOLICITADO
+        const catalogByYear = [
+            {
+                year: 2026,
+                badge: "🚀 TABELA LANÇAMENTOS 2026",
+                description: "Novidades absolutas lançadas em 2026 (17E, 18, Duo dobrável e Linha Pro)",
+                items: [
+                    { id: '2026-17e', name: "iPhone 17E", price: 5499, storage: ["128GB", "256GB"], colors: ["#1c1c1e", "#f2f2f2", "#a4c7e2"], selectedStorage: "128GB", selectedColor: "#1c1c1e", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+17E", tag: "Edição Especial 2026" },
+                    { id: '2026-18', name: "iPhone 18", price: 7499, storage: ["128GB", "256GB"], colors: ["#171e27", "#f0ece1", "#e7b4c4"], selectedStorage: "128GB", selectedColor: "#171e27", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+18", tag: "Lançamento Setembro" },
+                    { id: '2026-duo', name: "iPhone Duo", price: 12999, storage: ["256GB", "512GB", "1TB"], colors: ["#111111", "#baab9e"], selectedStorage: "256GB", selectedColor: "#111111", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+Duo+Fold", tag: "Novo Dobrável 2026" },
+                    { id: '2026-18pro', name: "iPhone 18 Pro", price: 9899, storage: ["256GB", "512GB"], colors: ["#1c1c1e", "#f2f2f2", "#e5c596"], selectedStorage: "256GB", selectedColor: "#1c1c1e", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+18+Pro", tag: "A20 Pro Chip" },
+                    { id: '2026-18promax', name: "iPhone 18 Pro Max", price: 11499, storage: ["256GB", "512GB", "1TB"], colors: ["#1c1c1e", "#baab9e", "#e5c596"], selectedStorage: "256GB", selectedColor: "#1c1c1e", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+18+Pro+Max", tag: "Topo de Linha 2026" }
+                ]
+            },
+            {
+                year: 2025,
+                badge: "⚡ TABELA LINHA 2025",
+                description: "Aparelhos lançados em 2025 (Linha 17 e o revolucionário 17 Slim / Air)",
+                items: [
+                    { id: '2025-17', name: "iPhone 17", price: 5999, storage: ["128GB", "256GB"], colors: ["#22252a", "#d0e4d4"], selectedStorage: "128GB", selectedColor: "#22252a", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+17", tag: "Geração 2025" },
+                    { id: '2025-17slim', name: "iPhone 17 Slim / Air", price: 6999, storage: ["128GB", "256GB"], colors: ["#111111", "#e2e2e2"], selectedStorage: "128GB", selectedColor: "#111111", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+17+Slim", tag: "Ultrafino 2025" },
+                    { id: '2025-17pro', name: "iPhone 17 Pro", price: 7999, storage: ["256GB", "512GB"], colors: ["#2b3846", "#1c1c1e"], selectedStorage: "256GB", selectedColor: "#2b3846", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+17+Pro", tag: "Titânio Gen 2" },
+                    { id: '2025-17promax', name: "iPhone 17 Pro Max", price: 8999, storage: ["256GB", "512GB", "1TB"], colors: ["#2b3846", "#baab9e"], selectedStorage: "256GB", selectedColor: "#2b3846", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+17+Pro+Max", tag: "A19 Pro Chip" }
+                ]
+            },
+            {
+                year: 2024,
+                badge: "💎 TABELA LINHA 2024",
+                description: "Modelos lançados em 2024 (iPhone 16 Series)",
+                items: [
+                    { id: '2024-16', name: "iPhone 16", price: 4999, storage: ["128GB", "256GB"], colors: ["#a4d3cf", "#4d5b9e", "#1c232d"], selectedStorage: "128GB", selectedColor: "#a4d3cf", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+16", tag: "Camera Control" },
+                    { id: '2024-16plus', name: "iPhone 16 Plus", price: 5699, storage: ["128GB", "256GB"], colors: ["#a4d3cf", "#4d5b9e"], selectedStorage: "128GB", selectedColor: "#a4d3cf", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+16+Plus", tag: "Tela Grande" },
+                    { id: '2024-16pro', name: "iPhone 16 Pro", price: 6299, storage: ["128GB", "256GB", "512GB"], colors: ["#c2a991", "#1c1c1e"], selectedStorage: "128GB", selectedColor: "#c2a991", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+16+Pro", tag: "A18 Pro Chip" },
+                    { id: '2024-16promax', name: "iPhone 16 Pro Max", price: 7299, storage: ["256GB", "512GB"], colors: ["#c2a991", "#1c1c1e"], selectedStorage: "256GB", selectedColor: "#c2a991", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+16+Pro+Max", tag: "Mais Vendido" }
+                ]
+            },
+            {
+                year: 2023,
+                badge: "TABELA LINHA 2023",
+                description: "iPhone 15 Series (Estreia da Dynamic Island e USB-C)",
+                items: [
+                    { id: '2023-15', name: "iPhone 15", price: 3999, storage: ["128GB", "256GB"], colors: ["#22252a", "#d0e4d4"], selectedStorage: "128GB", selectedColor: "#22252a", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+15", tag: "USB-C" },
+                    { id: '2023-15pro', name: "iPhone 15 Pro", price: 4899, storage: ["128GB", "256GB"], colors: ["#2f3847", "#baab9e"], selectedStorage: "128GB", selectedColor: "#2f3847", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+15+Pro", tag: "A17 Pro" },
+                    { id: '2023-15promax', name: "iPhone 15 Pro Max", price: 5599, storage: ["256GB", "512GB"], colors: ["#2f3847", "#baab9e"], selectedStorage: "256GB", selectedColor: "#2f3847", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+15+Pro+Max", tag: "Zoom 5x" }
+                ]
+            },
+            {
+                year: 2022,
+                badge: "TABELA LINHA 2022",
+                description: "iPhone 14 Series",
+                items: [
+                    { id: '2022-14', name: "iPhone 14", price: 3299, storage: ["128GB", "256GB"], colors: ["#a0b4c8", "#1b2129"], selectedStorage: "128GB", selectedColor: "#a0b4c8", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+14", tag: "Custo-Benefício" },
+                    { id: '2022-14promax', name: "iPhone 14 Pro Max", price: 4599, storage: ["128GB", "256GB"], colors: ["#483d4c", "#1e1e1e"], selectedStorage: "128GB", selectedColor: "#483d4c", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+14+Pro+Max", tag: "Dynamic Island" }
+                ]
+            },
+            {
+                year: 2021,
+                badge: "TABELA LINHA 2021",
+                description: "iPhone 13 / 13 Pro / mini",
+                items: [
+                    { id: '2021-13mini', name: "iPhone 13 mini", price: 2399, storage: ["128GB"], colors: ["#1c232d", "#f9f6ef"], selectedStorage: "128GB", selectedColor: "#1c232d", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+13+mini", tag: "Compacto" },
+                    { id: '2021-13', name: "iPhone 13", price: 2799, storage: ["128GB", "256GB"], colors: ["#1c232d", "#f9f6ef"], selectedStorage: "128GB", selectedColor: "#1c232d", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+13", tag: "Mais Buscado" },
+                    { id: '2021-13promax', name: "iPhone 13 Pro Max", price: 3799, storage: ["128GB", "256GB"], colors: ["#9bb5ce", "#454442"], selectedStorage: "128GB", selectedColor: "#9bb5ce", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+13+Pro+Max", tag: "Super Bateria" }
+                ]
+            },
+            {
+                year: 2020,
+                badge: "TABELA LINHA 2020",
+                description: "iPhone 12 / 12 Pro / SE2",
+                items: [
+                    { id: '2020-se2', name: "iPhone SE (2ª Gen)", price: 1199, storage: ["64GB", "128GB"], colors: ["#1f2022", "#fbfbfa"], selectedStorage: "64GB", selectedColor: "#1f2022", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+SE+2020", tag: "Entrada" },
+                    { id: '2020-12', name: "iPhone 12", price: 2199, storage: ["64GB", "128GB"], colors: ["#1f2022", "#274258"], selectedStorage: "64GB", selectedColor: "#1f2022", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+12", tag: "5G" },
+                    { id: '2020-12pro', name: "iPhone 12 Pro", price: 2699, storage: ["128GB", "256GB"], colors: ["#274258", "#454442"], selectedStorage: "128GB", selectedColor: "#274258", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+12+Pro", tag: "Tripla Câmera" }
+                ]
+            },
+            {
+                year: 2019,
+                badge: "TABELA LINHA 2019",
+                description: "iPhone 11 / 11 Pro / Max",
+                items: [
+                    { id: '2019-11', name: "iPhone 11", price: 1799, storage: ["64GB", "128GB"], colors: ["#1f2022", "#d1c4e9"], selectedStorage: "64GB", selectedColor: "#1f2022", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+11", tag: "Popular" },
+                    { id: '2019-11promax', name: "iPhone 11 Pro Max", price: 2399, storage: ["64GB", "256GB"], colors: ["#454442", "#f3e2c8"], selectedStorage: "64GB", selectedColor: "#454442", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+11+Pro+Max", tag: "Super Tela" }
+                ]
+            },
+            {
+                year: 2018,
+                badge: "TABELA LINHA CLÁSSICA 2018",
+                description: "iPhone XR, XS & XS Max",
+                items: [
+                    { id: '2018-xr', name: "iPhone XR", price: 1249, storage: ["64GB", "128GB"], colors: ["#1f2022", "#a91d22", "#f9d649"], selectedStorage: "64GB", selectedColor: "#1f2022", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+XR", tag: "Linha 2018" },
+                    { id: '2018-xs', name: "iPhone XS", price: 1399, storage: ["64GB", "256GB"], colors: ["#3a3a3c", "#f3e2c8"], selectedStorage: "64GB", selectedColor: "#3a3a3c", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+XS", tag: "Compacto Aço" },
+                    { id: '2018-xsmax', name: "iPhone XS Max", price: 1599, storage: ["64GB", "256GB"], colors: ["#f3e2c8", "#3a3a3c"], selectedStorage: "64GB", selectedColor: "#f3e2c8", img: "https://placehold.co/300x300/080808/FFFFFF?text=iPhone+XS+Max", tag: "Clássico Max" }
+                ]
+            }
+        ];
+
+        let cart = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFeed(catalogByYear);
+        });
+
+        // RENDERIZAÇÃO DO FEED VERTICAL ANO POR ANO
+        function renderFeed(data) {
+            const container = document.getElementById('feedContainer');
+            container.innerHTML = data.map(block => `
+                <section id="ano-${block.year}" class="scroll-mt-36 space-y-6">
+                    <!-- CABEÇALHO DO ANO (BANNER DA TABELA) -->
+                    <div class="glass-section-header p-5 rounded-3xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xl">
+                        <div>
+                            <span class="text-xs font-black text-amber-400 uppercase tracking-widest block">${block.badge}</span>
+                            <h2 class="text-2xl sm:text-3xl font-black text-white">iPhones do Ano ${block.year}</h2>
+                            <p class="text-xs text-neutral-400 mt-0.5">${block.description}</p>
+                        </div>
+                        <span class="text-xs font-mono font-bold bg-neutral-900 border border-neutral-800 text-neutral-300 px-3 py-1.5 rounded-full">
+                            ${block.items.length} Modelo(s)
+                        </span>
+                    </div>
+
+                    <!-- GRADE DE QUADRADOS DO ANO (GRID ESTILO APPS LAUNCHER) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                        ${block.items.map(item => {
+                            const pixPrice = Math.round(item.price * 0.9);
+                            return `
+                            <div class="app-square-card border border-neutral-800 p-4 flex flex-col justify-between relative group">
+                                <span class="absolute top-3 left-3 bg-neutral-900/90 text-amber-400 border border-amber-500/30 text-[9px] font-black px-2 py-0.5 rounded-full uppercase">
+                                    ${item.tag}
+                                </span>
+
+                                <!-- Imagem Quadrada -->
+                                <div class="w-full h-32 sm:h-36 my-2 flex items-center justify-center">
+                                    <img src="${item.img}" alt="${item.name}" class="h-full object-contain group-hover:scale-105 transition-all">
+                                </div>
+
+                                <!-- Detalhes do Produto -->
+                                <div class="space-y-1.5">
+                                    <h3 class="font-black text-white text-sm sm:text-base leading-tight">${item.name}</h3>
+
+                                    <!-- Seleção de GBs -->
+                                    <div class="flex items-center gap-1">
+                                        ${item.storage.map(st => `
+                                            <button onclick="changeStorage('${item.id}', '${st}')" class="text-[9px] px-1.5 py-0.5 rounded font-bold ${item.selectedStorage === st ? 'bg-amber-500 text-black' : 'bg-neutral-900 text-neutral-400 border border-neutral-800'}">
+                                                ${st}
+                                            </button>
+                                        `).join('')}
+                                    </div>
+
+                                    <!-- Seleção de Cores -->
+                                    <div class="flex items-center gap-1.5 pt-1">
+                                        ${item.colors.map(c => `
+                                            <span onclick="changeColor('${item.id}', '${c}')" class="w-3.5 h-3.5 rounded-full border border-neutral-700 cursor-pointer ${item.selectedColor === c ? 'ring-2 ring-amber-500' : ''}" style="background-color: ${c};"></span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+
+                                <!-- Preço e Botão Adicionar -->
+                                <div class="mt-3 pt-2 border-t border-neutral-800/80 flex items-end justify-between">
+                                    <div>
+                                        <span class="text-[8px] text-emerald-400 font-bold block uppercase">PIX 10% OFF</span>
+                                        <div class="text-sm sm:text-base font-black text-white">R$ ${pixPrice.toLocaleString('pt-BR')}</div>
+                                    </div>
+                                    <button onclick="addToCart('${item.id}')" class="bg-gradient-to-r from-amber-400 to-amber-600 hover:opacity-90 text-black font-extrabold p-2.5 rounded-xl text-xs transition-all shadow-md">
+                                        <i class="fa-solid fa-cart-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `}).join('')}
+                    </div>
+                </section>
+            `).join('');
+        }
+
+        // SELEÇÃO DINÂMICA DENTRO DO CARD QUADRADO
+        function changeStorage(itemId, st) {
+            catalogByYear.forEach(block => {
+                const item = block.items.find(i => i.id === itemId);
+                if (item) item.selectedStorage = st;
+            });
+            filterFeed();
+        }
+
+        function changeColor(itemId, color) {
+            catalogByYear.forEach(block => {
+                const item = block.items.find(i => i.id === itemId);
+                if (item) item.selectedColor = color;
+            });
+            filterFeed();
+        }
+
+        // FILTRO DE BUSCA NO FEED
+        function filterFeed() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            if (!query) {
+                renderFeed(catalogByYear);
+                return;
+            }
+
+            const filteredData = catalogByYear.map(block => ({
+                ...block,
+                items: block.items.filter(item => item.name.toLowerCase().includes(query) || item.selectedStorage.toLowerCase().includes(query))
+            })).filter(block => block.items.length > 0);
+
+            renderFeed(filteredData);
+        }
+
+        // CARRINHO & CHECKOUT
+        function toggleCart() {
+            document.getElementById('cartModal').classList.toggle('hidden');
+        }
+
+        function addToCart(itemId) {
+            let foundItem = null;
+            catalogByYear.forEach(block => {
+                const i = block.items.find(item => item.id === itemId);
+                if (i) foundItem = i;
+            });
+
+            if (!foundItem) return;
+
+            const cartKey = `${foundItem.id}-${foundItem.selectedStorage}`;
+            const existing = cart.find(c => c.cartKey === cartKey);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...foundItem, cartKey, qty: 1 });
+            }
+
+            updateCartUI();
+            toggleCart();
+        }
+
+        function updateCartUI() {
+            const count = document.getElementById('cartCount');
+            const container = document.getElementById('cartItemsContainer');
+            const totalEl = document.getElementById('cartTotal');
+
+            const totalQty = cart.reduce((acc, i) => acc + i.qty, 0);
+            count.innerText = totalQty;
+
+            const totalSum = cart.reduce((acc, i) => acc + (Math.round(i.price * 0.9) * i.qty), 0);
+            totalEl.innerText = `R$ ${totalSum.toLocaleString('pt-BR')}`;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-xs text-neutral-500 text-center py-10">Carrinho vazio.</p>`;
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex items-center justify-between bg-neutral-950 p-3 rounded-xl border border-neutral-800">
+                    <div>
+                        <h4 class="text-xs font-bold text-white">${item.name}</h4>
+                        <span class="text-[10px] text-neutral-400">${item.selectedStorage}</span>
+                        <span class="text-xs font-bold text-amber-400 block">R$ ${Math.round(item.price * 0.9).toLocaleString('pt-BR')}</span>
+                    </div>
+                    <span class="text-xs font-bold text-neutral-300">x${item.qty}</span>
+                </div>
+            `).join('');
+        }
+
+        function checkoutWhatsApp() {
+            if (cart.length === 0) return;
+            let msg = `📱 *PEDIDO ER PLACE STORE*\n\n`;
+            cart.forEach(i => {
+                msg += `• *${i.name}* (${i.selectedStorage}) x${i.qty} - R$ ${Math.round(i.price * 0.9).toLocaleString('pt-BR')}\n`;
+            });
+            window.open(`https://wa.me/5500000000000?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
